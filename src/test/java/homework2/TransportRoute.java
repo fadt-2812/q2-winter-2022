@@ -9,7 +9,7 @@ public class TransportRoute {
     private double locomotiveTank;
     private double airplaneTank;
     private double autoFuelConsumption;
-    private double loco
+    private double loco;
 
 }
 
