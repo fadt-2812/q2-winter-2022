@@ -1,5 +1,4 @@
 package homework2;
-
 public class TransportRoute {
 
     private String transport;

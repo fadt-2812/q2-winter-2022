@@ -1,9 +1,7 @@
 package homework2;
 
 import org.junit.jupiter.api.Test;
-
 public class CalculationTransportRoute {
-
     @Test
     public void workingWithAuto() {
         TransportRoute autoRigaRezekne = new TransportRoute();
@@ -98,7 +96,6 @@ public class CalculationTransportRoute {
         System.out.println();
 
     }
-
 
     @Test
     public void workingWithLocomotive() {
