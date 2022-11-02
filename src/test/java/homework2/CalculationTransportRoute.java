@@ -220,6 +220,7 @@ public class CalculationTransportRoute {
              }
              else {
                  System.out.println("No");
+
              }
              System.out.println();
 
