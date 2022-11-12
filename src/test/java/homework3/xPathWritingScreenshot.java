@@ -16,9 +16,21 @@ public class xPathWritingScreenshot {
     //div[@class = 'car-top-filter-control next']
     //span[@class = 'showing-cars']
     //a[@class = 'dc-ui dropdown-toggle text-blue-500']
-    // 1 bag!!!
+    //div[@id = 'car-box-container']//li[2]/span
     //span[@class = 'category-label trend']
+    //div[@class = 'flt-type']//div[@class = 'grouped opened'] [1]
+    //div[@class = 'rc-link']//a[@class = 'open-modal search-index trigger-gtm-rc rental-conditions with-logo']
+    //div[@class = 'col-8']//a[@class = 'btn btn-book submit click-on-car selected-car prevent-loading instant']
+    //div[@class = 'flt-type']//span[@class = 'min-price']
+    //span[@class = 'dc-ui badge badge-medium badge-blue']
+    //label[@for = 'fuel-type-ft-V']
+    //label[@for = 'number-of-seats-seats-4']
+    //div[@class = 'supplier-rating']
+    //div[@class = 'price-item-price-main']
 
 
 
 }
+
+
+
