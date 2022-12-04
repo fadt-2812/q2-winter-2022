@@ -21,7 +21,7 @@ public class FirstSeleniumTest {
 
     @Test
     public void openHomePageCheck() {
-        String country = "Austria";
+        String country = "Latvia";
 
         System.setProperty("webdriver.chrome.driver", "c://chromedriver.exe");
         browser = new ChromeDriver();
