@@ -8,8 +8,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import javax.naming.Name;
-import java.net.URL;
 import java.time.Duration;
 import java.util.List;
 
@@ -36,7 +34,12 @@ public class BaseFunc {
     }
 
     public void click(By locator) {
+
         wait.until(ExpectedConditions.elementToBeClickable(locator)).click();
+    }
+
+    public void click(WebElement we) {
+        wait.until(ExpectedConditions.elementToBeClickable(we)).click();
     }
 
     public void select(By locator, String value) {
@@ -45,31 +48,38 @@ public class BaseFunc {
         select.selectByValue(value);
     }
 
-    public void type(By locator, String value) {
+    public void selectByText(By locator, String text) {
+        WebElement we = wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+        Select select = new Select(we);
+        select.selectByVisibleText(text);
+    }
+
+    public void type(By locator, String text) {
         WebElement input = wait.until(ExpectedConditions.presenceOfElementLocated(locator));
         input.clear();
-        input.sendKeys(value);
+        input.sendKeys(text);
     }
 
-    public void findElement(By locator) {
-        browser.findElement(locator);
-        wait.until(ExpectedConditions.presenceOfElementLocated(locator)).click();
-
+    public void type(By locator, int text) {
+        type(locator, String.valueOf(text));
 
     }
 
-    // public void listfindElement(By locator) {
-    //     List<browser> list = browser.findElements(locator);
-    // }
 
-    public void choiseFromList(By locator, String value) {
-        List<WebElement> list = browser.findElements(locator);
-        for (WebElement we : list)
-            if (we.getText().equals(list)) {
-                wait.until(ExpectedConditions.presenceOfElementLocated(locator));
-                we.click();
-                break;
-            }
+    public WebElement findElement(By locator) {
+        return wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+    }
+
+
+    public List<WebElement> findElements(By locator) {
+        return browser.findElements(locator);
+    }
+
+    public  void waitForElementsCountToBe(By locator, int count) {
+        wait.until(ExpectedConditions.numberOfElementsToBe((locator), count));
+    }
+    public void waitForMinElementsAmount(By locator, int minCount) {
+        wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(locator, minCount));
     }
 
 
